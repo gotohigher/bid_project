@@ -6,7 +6,8 @@ const controller = require("../controllers/bid");
 router.post('/insert', controller.createBid);
 router.get('/getAll', controller.getAll);
 router.put('/update', controller.updateBid);
-router.get('/:id',)
+router.delete('/:id', controller.delete);
+router.get('/getById', controller.getById);
 // router.post('/signin', controller.signin);
 
 module.exports = router;
