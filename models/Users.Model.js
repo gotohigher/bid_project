@@ -1,18 +1,15 @@
-const sql = require("../util/db");
-
-const User = (table) => {
-  table = table;
-}
-
-User.insert = (data, result) => {
-  sql.query(`INSERT INTO users SET ?`, data, (err, res) => {
-    if (err) {
-      console.log("error: ", err);
-      result(err);
-      return;
+module.exports = (sequelize, Sequelize) => {
+  const User = sequelize.define("user", {
+    name: {
+      type: Sequelize.STRING
+    },
+    email: {
+      type: Sequelize.STRING
+    },
+    password: {
+      type: Sequelize.STRING
     }
-    result(res);
   });
-}
 
-module.exports = User;
+  return User;
+};

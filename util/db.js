@@ -1,11 +1,13 @@
-const mysql = require("mysql");
-require("dotenv").config();
-
-const connection = mysql.createConnection({
-    host: process.env.HOST,
-    user: process.env.USER,
-    database: process.env.DATABASE,
-    port: process.env.DB_PORT
-  });
-
-module.exports = connection;
+module.exports = {
+  HOST: "localhost",
+  USER: "root",
+  PASSWORD: "",
+  DB: "livestream",
+  dialect: "mysql",
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  }
+};
